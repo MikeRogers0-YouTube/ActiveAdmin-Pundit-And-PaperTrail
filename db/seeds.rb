@@ -9,3 +9,7 @@
 Post.find_or_create_by(title: "Sample Post", body: "Sample Body")
 Post.find_or_create_by(title: "All the post", body: "The post can not fit on the screen")
 Post.find_or_create_by(title: "Last Post", body: "May the post be with you.")
+
+User.find_or_create_by!(email: 'admin@example.com') do |user|
+  user.attributes= {password: '12345678', password_confirmation: '12345678'}
+end
