@@ -10,6 +10,8 @@ class ApplicationController < ActionController::Base
   end
 
   def info_for_paper_trail
-    { event_source: [request.method, request.path].join(" ") }
+    {
+      event_source: [request.method, request.path].join(" ")
+    }
   end
 end

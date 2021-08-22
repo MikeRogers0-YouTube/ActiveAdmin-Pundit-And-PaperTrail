@@ -7,7 +7,7 @@ module ActiveAdmin::Loggable
 
       sidebar :history, only: [:show] do
         ul do
-          resource.versions.each do |version|
+          resource.versions.reorder(created_at: :desc).each do |version|
             li [
               version.gid_whodunnit,
               version.created_at
