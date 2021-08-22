@@ -13,3 +13,4 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import "water.css/out/water.css";
+import "../stylesheets/app.scss";
