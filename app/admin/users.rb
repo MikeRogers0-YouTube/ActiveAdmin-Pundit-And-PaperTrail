@@ -15,5 +15,32 @@ ActiveAdmin.register User do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
-  
+
+  permit_params :role
+
+  filter :email
+  filter :role
+  filter :current_sign_in_at
+  filter :sign_in_count
+  filter :created_at
+
+  index do
+    selectable_column
+    id_column
+    column :id
+    column :email
+    column :role
+    column :current_sign_in_at
+    column :sign_in_count
+    column :created_at
+    actions
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :email, input_html: {disabled: true}
+      f.input :role, as: :select, include_blank: false
+    end
+    f.actions
+  end
 end

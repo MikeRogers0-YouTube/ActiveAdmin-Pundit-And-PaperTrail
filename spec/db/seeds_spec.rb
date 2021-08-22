@@ -1,5 +1,5 @@
-RSpec.describe 'Rails.application' do
-  describe '#load_seed' do
+RSpec.describe "Rails.application" do
+  describe "#load_seed" do
     subject { Rails.application.load_seed }
 
     it do

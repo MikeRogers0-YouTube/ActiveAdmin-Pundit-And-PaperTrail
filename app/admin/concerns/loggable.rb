@@ -1,8 +1,8 @@
 module ActiveAdmin::Loggable
-   def self.extended(base)
+  def self.extended(base)
     base.instance_eval do
       action_item :history, only: :show do
-        link_to('History', [:history, :admin, resource])
+        link_to("History", [:history, :admin, resource])
       end
 
       sidebar :history, only: [:show] do
@@ -20,5 +20,5 @@ module ActiveAdmin::Loggable
         render "versions"
       end
     end
-   end
+  end
 end
