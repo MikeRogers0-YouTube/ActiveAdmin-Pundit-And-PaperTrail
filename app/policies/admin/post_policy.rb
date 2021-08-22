@@ -1,22 +1,18 @@
 class Admin::PostPolicy < ApplicationPolicy
   def index?
-    true
-  end
-
-  def index?
-    true
+    user.role_project_manager? || user.role_developer?
   end
 
   def show?
-    true
+    user.role_project_manager? || user.role_developer?
   end
 
   def create?
-    true
+    user.role_project_manager? || user.role_developer?
   end
 
   def update?
-    true
+    user.role_project_manager? || user.role_developer?
   end
 
   def destroy?
@@ -24,7 +20,7 @@ class Admin::PostPolicy < ApplicationPolicy
   end
 
   def history?
-    true
+    user.role_project_manager? || user.role_developer?
   end
 
   class Scope < Scope

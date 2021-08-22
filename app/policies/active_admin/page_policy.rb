@@ -1,6 +1,6 @@
 class ActiveAdmin::PagePolicy < ApplicationPolicy
   def show?
-    true
+    user.role_project_manager? || user.role_developer?
   end
 
   class Scope < Scope
