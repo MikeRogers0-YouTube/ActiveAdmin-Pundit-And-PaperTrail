@@ -13,7 +13,7 @@ module ActiveAdmin
         def build(resource)
           if authorized?(ActiveAdmin::Auth::READ, PaperTrail::Version)
             @resource = resource
-            @versions = active_admin_authorization.scope_collection(resource.versions.page(params[:page]))
+            @versions = active_admin_authorization.scope_collection(resource.versions.reorder(created_at: :desc).page(params[:page]))
             super(title, for: resource)
             build_versions
           end
@@ -39,13 +39,16 @@ module ActiveAdmin
         def build_version(version)
           div for: version do
             div class: "active_admin_version_meta" do
-              h4 class: "active_admin_version_author" do
-                version.whodidit ? auto_link(version.whodidit) : I18n.t("active_admin.versions.author_missing")
-              end
-              span pretty_format version.created_at
+              span version.event_source
+              strong version.gid_whodunnit
+              span version.created_at
             end
-            div class: "active_admin_version_body" do
-              simple_format version.changes
+            div class: "active_admin_version_changeset" do
+              ul do
+                version.changeset.each do |field, value|
+                  li field + ": " + value.inspect
+                end
+              end
             end
           end
         end

@@ -1,6 +1,4 @@
 ActiveAdmin.register User do
-  extend ActiveAdmin::Loggable
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
@@ -38,7 +36,7 @@ ActiveAdmin.register User do
 
   form do |f|
     f.inputs do
-      f.input :email, input_html: {disabled: true}
+      f.input :email
       f.input :role, as: :select, include_blank: false
     end
     f.actions

@@ -9,7 +9,7 @@ module ActiveAdmin
       # turned on for the current resource
       def default_main_content
         super
-        active_admin_versions # if resource.versions
+        active_admin_versions if resource.try(:paper_trail_options?)
       end
 
       # Display the comments for the resource. Same as calling

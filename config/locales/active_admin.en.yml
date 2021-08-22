@@ -1,0 +1,7 @@
+en:
+  active_admin:
+    versions:
+      title_content:
+        zero: "Versions (0)"
+        one: "Versions (%{count})"
+        other: "Versions (%{count})"
