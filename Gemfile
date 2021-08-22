@@ -47,3 +47,5 @@ gem "devise", "~> 4.8"
 gem "activeadmin", "~> 2.9"
 
 gem "paper_trail", "~> 12.0"
+
+gem "pundit", "~> 2.1"
