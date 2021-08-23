@@ -39,13 +39,16 @@ module ActiveAdmin
         def build_version(version)
           div for: version do
             div class: "active_admin_version_meta" do
-              span version.event_source
+              strong version.event_source
+              span " - "
               strong auto_link(version.gid_whodunnit)
-              span version.created_at
+              span " - "
+              strong version.created_at
             end
             div class: "active_admin_version_changeset" do
               ul do
                 version.changeset.each do |field, value|
+                  next if field.in?(["created_at", "updated_at"])
                   li field + ": " + value.inspect
                 end
               end
