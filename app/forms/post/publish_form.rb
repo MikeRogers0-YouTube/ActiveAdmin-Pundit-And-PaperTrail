@@ -8,7 +8,7 @@ class Post::PublishForm < ApplicationForm
   delegate :published?, to: :post
 
   def save
-    return unless valid?
+    return false unless valid?
 
     update_post_published_at
     enqueue_syndication
