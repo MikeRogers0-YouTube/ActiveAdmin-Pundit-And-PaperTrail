@@ -40,3 +40,5 @@ yarn-debug.log*
 
 # Ignore the vendor bundle
 vendor/bundle/
+
+coverage/*
