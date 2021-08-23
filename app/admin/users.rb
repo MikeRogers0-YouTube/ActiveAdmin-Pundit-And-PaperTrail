@@ -14,7 +14,7 @@ ActiveAdmin.register User do
   #   permitted
   # end
 
-  permit_params :role
+  permit_params :email, :role, :password, :password_confirmation
 
   filter :email
   filter :role
@@ -25,7 +25,6 @@ ActiveAdmin.register User do
   index do
     selectable_column
     id_column
-    column :id
     column :email
     column :role
     column :current_sign_in_at
@@ -38,6 +37,8 @@ ActiveAdmin.register User do
     f.inputs do
       f.input :email
       f.input :role, as: :select, include_blank: false
+      f.input :password
+      f.input :password_confirmation
     end
     f.actions
   end

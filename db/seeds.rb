@@ -19,3 +19,13 @@ User.find_or_create_by!(email: "admin@example.com") do |user|
     password_confirmation: "12345678"
   }
 end
+
+User.roles.each do |role, _|
+  User.find_or_create_by!(email: "#{role}@example.com") do |user|
+    user.attributes = {
+      role: role,
+      password: "12345678",
+      password_confirmation: "12345678"
+    }
+  end
+end

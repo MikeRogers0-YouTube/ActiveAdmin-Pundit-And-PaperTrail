@@ -8,7 +8,7 @@ class Admin::UserPolicy < ApplicationPolicy
   end
 
   def create?
-    false
+    user.role_project_manager? || user.role_developer?
   end
 
   def update?
