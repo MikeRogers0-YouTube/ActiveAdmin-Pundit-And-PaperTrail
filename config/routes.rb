@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :users
-  resources :posts
+  resources :posts do
+    resource :publish_forms, only: [:new, :create], module: :posts, path: :publish
+  end
 
   root to: redirect("/posts")
 

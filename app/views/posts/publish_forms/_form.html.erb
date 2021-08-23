@@ -1,0 +1,23 @@
+<%= form_with(model: publish_form) do |form| %>
+  <% if publish_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(publish_form.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% publish_form.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.check_box :terms_of_service %>
+    <%= form.label :terms_of_service %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
