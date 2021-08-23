@@ -1,10 +1,8 @@
 module ActiveAdmin
   module Versions
-
     # Adds #active_admin_versions to the show page for use
     # and sets it up on the default main content
     module ShowPageHelper
-
       # Add admin comments to the main content if they are
       # turned on for the current resource
       def default_main_content
@@ -18,6 +16,5 @@ module ActiveAdmin
         active_admin_versions_for(resource, *args, &block)
       end
     end
-
   end
 end

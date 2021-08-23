@@ -1,11 +1,10 @@
 class Admin::Post::PublishFormPolicy < ApplicationPolicy
-
   def index?
-    true
+    user.role_project_manager? || user.role_developer?
   end
 
   def create?
-    !record.published?
+    !record.published? && (user.role_project_manager? || user.role_developer?)
   end
 
   class Scope < Scope

@@ -334,7 +334,6 @@ ActiveAdmin.setup do |config|
   config.use_webpacker = true
 end
 
-
 require "active_admin/orm/active_record/versions/show_page_helper"
 require "active_admin/orm/active_record/versions/views"
 

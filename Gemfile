@@ -2,13 +2,17 @@ source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.1"
 
+gem "activeadmin", "~> 2.9"
 gem "barnes", "~> 0.0.8"
 gem "bootsnap", ">= 1.4.4", require: false
+gem "devise", "~> 4.8"
 gem "image_processing", "~> 1.12"
 gem "lograge", "~> 0.11.2"
+gem "paper_trail", "~> 12.0"
 gem "pg", "~> 1.1"
 gem "premailer-rails", "~> 1.11"
 gem "puma", "~> 5.0"
+gem "pundit", "~> 2.1"
 gem "rails", "~> 6.1.4", ">= 6.1.4.1"
 gem "redis", "~> 4.2"
 gem "sass-rails", ">= 6"
@@ -28,13 +32,12 @@ group :development, :test do
 end
 
 group :development do
+  gem "i18n-debug", "~> 1.2"
   gem "letter_opener", "~> 1.7"
   gem "letter_opener_web", "~> 1.4"
   gem "listen", "~> 3.3"
-  # gem "rack-mini-profiler", "~> 2.0"
   gem "standardrb", "~> 1.0", require: false
   gem "web-console", ">= 4.1.0"
-  gem "i18n-debug", "~> 1.2"
 end
 
 group :test do
@@ -42,12 +45,3 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-
-gem "devise", "~> 4.8"
-
-gem "activeadmin", "~> 2.9"
-
-gem "paper_trail", "~> 12.0"
-
-gem "pundit", "~> 2.1"
-

@@ -19,10 +19,6 @@ class Admin::UserPolicy < ApplicationPolicy
     false
   end
 
-  def history?
-    user.role_project_manager? || user.role_developer?
-  end
-
   class Scope < Scope
     def resolve
       scope.all

@@ -4,7 +4,6 @@ require "active_admin/views/components/panel"
 module ActiveAdmin
   module Versions
     module Views
-
       class Versions < ActiveAdmin::Views::Panel
         builder_method :active_admin_versions_for
 
