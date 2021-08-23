@@ -45,4 +45,4 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
-gem 'simplecov', require: false, group: :test
+gem "simplecov", require: false, group: :test

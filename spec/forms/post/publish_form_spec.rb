@@ -5,7 +5,8 @@ RSpec.describe Post::PublishForm do
 
   describe "#published?" do
     it do
-      expect { instance.post.published_at = Time.zone.now }.to change { instance.published? }.from(false).to(true)
+      expect { instance.post.published_at = Time.zone.now }
+        .to change { instance.published? }.from(false).to(true)
     end
   end
 
@@ -18,7 +19,7 @@ RSpec.describe Post::PublishForm do
       end
 
       it do
-        expect{ subject }.to change{instance.post.published_at}.from(nil).to(Time)
+        expect { subject }.to change { instance.post.published_at }.from(nil).to(Time)
           .and have_enqueued_job(Post::SyndicateJob).with(instance.post)
       end
     end
@@ -31,7 +32,7 @@ RSpec.describe Post::PublishForm do
       end
 
       it do
-        expect{ subject }.to_not change{instance.post.published_at}
+        expect { subject }.to_not change { instance.post.published_at }
         expect(Post::SyndicateJob).to_not have_been_enqueued
       end
     end
