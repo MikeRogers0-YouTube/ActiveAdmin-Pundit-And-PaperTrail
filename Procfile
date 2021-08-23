@@ -6,4 +6,4 @@ release: ./bin/heroku/release-tasks.sh
 web: ./bin/rails server -p ${PORT:-5000}
 
 ## Sidekiq is the de-facto standard choice for running Background tasks
-# worker: ./bin/bundle exec sidekiq -C config/sidekiq.yml
+worker: ./bin/bundle exec sidekiq -C config/sidekiq.yml
