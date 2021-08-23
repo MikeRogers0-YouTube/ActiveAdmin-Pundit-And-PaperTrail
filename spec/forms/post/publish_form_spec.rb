@@ -3,6 +3,12 @@ require "rails_helper"
 RSpec.describe Post::PublishForm do
   let(:instance) { build(:post_publish_form) }
 
+  describe "#published?" do
+    it do
+      expect { instance.post.published_at = Time.zone.now }.to change { instance.published? }.from(false).to(true)
+    end
+  end
+
   describe "#save" do
     subject { instance.save }
 
