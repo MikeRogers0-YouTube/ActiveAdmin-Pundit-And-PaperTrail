@@ -31,3 +31,14 @@
 
 en:
   hello: "Hello world"
+
+  activemodel:
+    models:
+      post/publish_form: "Publication Event"
+    attributes:
+      post/publish_form:
+        terms_of_service: "Your understand this will publish this post & can not be undone"
+  active_admin:
+    resources:
+      post/publish_form:
+        new_model: "Publish Post"

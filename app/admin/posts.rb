@@ -15,4 +15,8 @@ ActiveAdmin.register Post do
   # end
 
   permit_params :title, :body
+
+  action_item :publish, only: :show do
+    link_to "Publish Post", [:new, :admin, resource, :post_publish_form]
+  end
 end

@@ -40,7 +40,7 @@ module ActiveAdmin
           div for: version do
             div class: "active_admin_version_meta" do
               span version.event_source
-              strong version.gid_whodunnit
+              strong auto_link(version.gid_whodunnit)
               span version.created_at
             end
             div class: "active_admin_version_changeset" do

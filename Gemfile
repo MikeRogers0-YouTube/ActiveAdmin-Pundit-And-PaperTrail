@@ -34,6 +34,7 @@ group :development do
   # gem "rack-mini-profiler", "~> 2.0"
   gem "standardrb", "~> 1.0", require: false
   gem "web-console", ">= 4.1.0"
+  gem "i18n-debug", "~> 1.2"
 end
 
 group :test do
@@ -49,3 +50,4 @@ gem "activeadmin", "~> 2.9"
 gem "paper_trail", "~> 12.0"
 
 gem "pundit", "~> 2.1"
+
