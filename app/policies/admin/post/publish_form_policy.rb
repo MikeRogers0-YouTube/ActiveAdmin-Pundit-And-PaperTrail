@@ -5,7 +5,7 @@ class Admin::Post::PublishFormPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    !record.published?
   end
 
   class Scope < Scope

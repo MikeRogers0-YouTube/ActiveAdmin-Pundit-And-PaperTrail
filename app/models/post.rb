@@ -3,4 +3,8 @@ class Post < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
+
+  def published?
+    published_at.present?
+  end
 end
